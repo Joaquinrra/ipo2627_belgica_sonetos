@@ -1,0 +1,173 @@
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN (Diseño Cromático y Tipográfico)
+   ========================================================================== */
+:root {
+    /* Paleta Cromática: Monocromática Cálida (Tinta y Pergamino) */
+    --color-bg: #fbf8f3;
+    --color-surface: #f4eee0;
+    --color-border: #e2d7c5;
+    --color-text-main: #2b2523;
+    --color-text-muted: #6b5e58;
+    --color-accent: #8c3a2b; /* Rojo terracota clásico */
+    --color-accent-hover: #6a2a1e;
+
+    /* Fuentes */   
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Lora', serif;
+
+    /* Unidades de Espaciado (Escala Modular) */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+
+    /* Sombras y Bordes */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --shadow-soft: 0 4px 20px rgba(43, 37, 35, 0.06);
+}
+
+/* ==========================================================================
+   RESETS & ESTRUCTURA BASE
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   CABECERA Y PIE
+   ========================================================================== */
+.header {
+    text-align: center;
+    padding: var(--space-lg) var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+}
+
+.header__title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+}
+
+.header__subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-xs);
+}
+
+.footer {
+    text-align: center;
+    padding: var(--space-md);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL Y SELECTOR
+   ========================================================================== */
+.main-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-sm);
+    flex-grow: 1;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+}
+
+.controls__label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.controls__select {
+    padding: 0.75rem var(--space-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: #ffffff;
+    color: var(--color-text-main);
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.controls__select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(140, 58, 43, 0.15);
+}
+
+/* ==========================================================================
+   TARJETA DEL SONETO (Principios Gestalt: Proximidad y Semejanza)
+   ========================================================================== */
+.poem-card {
+    background-color: #ffffff;
+    padding: var(--space-xl) var(--space-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.poem-card__placeholder {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.poem-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+}
+
+.poem-card__author {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.poem-card__author::before {
+    content: "— ";
+}
+
+/* Estructura del Soneto: Estrofas y Versos */
+.stanza {
+    margin-bottom: var(--space-md);
+}
+
+.stanza:last-child {
+    margin-bottom: 0;
+}
+
+.verse {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text-main);
+}

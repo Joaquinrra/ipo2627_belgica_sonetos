@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Sonetos</title>
+    <!-- Preconexión para fuentes tipográficas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tenemos dos fuentes, para los títulos usamos Cinzel, y para el soneto Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="header__title">Antología de Sonetos</h1>
+        <p class="header__subtitle">Clásicos de la poesía en español</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Selector de Sonetos -->
+        <section class="controls" aria-labelledby="select-label">
+            <label id="select-label" for="sonnet-select" class="controls__label">Selecciona un soneto:</label>
+            <select id="sonnet-select" class="controls__select">
+                <option value="" disabled selected>-- Elige una obra --</option>
+            </select>
+        </section>
+
+        <!-- Display del Soneto -->
+        <article id="sonnet-display" class="poem-card" aria-live="polite">
+            <p class="poem-card__placeholder">Por favor, selecciona un soneto para comenzar la lectura.</p>
+        </article>
+    </main>
+
+
+    <!-- Vinculación moderna de JS mediante módulos -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
